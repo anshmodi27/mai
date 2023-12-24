@@ -24,21 +24,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-228m_kb!r)p0w5-buw0iciais!3*wtu@%56i+_q%4=&*kb5+=('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*","127.0.0.1","localhost"]
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = False
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:8000",
-    "http://127.0.0.1:3001",
-    "http://localhost:8080",
-    "http://localhost:5173",
+ALLOWED_HOSTS = ["206.189.136.28","missionagriindia.com","www.missionagriindia.com"]
+#CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ALLOW_CREDENTIALS = False
+#CORS_ORIGIN_WHITELIST = [
+#    "http://localhost:3000",
+ #   "http://localhost:3001",
+  #  "http://127.0.0.1:3000",
+   # "http://127.0.0.1:8000",
+#    "http://127.0.0.1:3001",
+ #   "http://localhost:8080",
+  #  "http://localhost:5173",
     
-]
+#]
 
 
 # Application definition
@@ -135,7 +135,7 @@ USE_TZ = True
 
 
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = "/var/www/mai/media/"
 MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -145,7 +145,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static'),
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
