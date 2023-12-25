@@ -37,7 +37,9 @@ urlpatterns = [
     path("dashboard/drafts", TemplateView.as_view(template_name='index.html')),
     path("dashboard/deleted", TemplateView.as_view(template_name='index.html')),
     path("dashboard/inquiry", TemplateView.as_view(template_name='index.html')),
-]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) 
++ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
++ static(settings.ASSETS_URL,document_root=settings.STATICFILES_DIRS[0])
 
 if settings.DEBUG:
     urlpatterns += static(settings.ASSETS_URL, document_root=settings.STATICFILES_DIRS[0])
