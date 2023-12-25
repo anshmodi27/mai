@@ -149,7 +149,7 @@ ASSETS_URL = '/assets/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     '/var/www/mai/assets',
-    os.path.join(BASE_DIR, "assets"),
+    
 ]
 STATIC_ROOT = "/var/www/mai/static/"
 
