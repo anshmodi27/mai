@@ -29,6 +29,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.productName
+
+class ImageSlider(models.Model):
+    image1 = models.ImageField(upload_to='slider/') 
+    image2 = models.ImageField(upload_to='slider/') 
+    image3 = models.ImageField(upload_to='slider/') 
+
+     
     
 
 class Inquiry(models.Model):

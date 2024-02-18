@@ -20,4 +20,8 @@ urlpatterns = [
     path("loginUser/",view=views.loginUser,name="loginUser"), 
     path("getInquiry/",view=views.getInquiry,name="getInquiry"),
     path("addInquiry/",view=views.addInquiry,name="addInquiry"),
+    path("addImageSlider/",view=views.addImageSlider,name="addImageSlider"),
+    path("getImageSlider/",view=views.getImageSlider,name="getImageSlider"),
+    path("convert_csv/",view=views.convert_csv,name="convert_csv"),
+   
 ]
