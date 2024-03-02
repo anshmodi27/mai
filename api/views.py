@@ -442,7 +442,9 @@ def convert_csv(request):
         return JsonResponse({"filepath": "media/csv/inquires.csv"})
        
 
-
-
-
-
+@csrf_exempt
+def dbDownload(request):
+    if request.user.is_superuser:
+        # copy the database file to the static folder
+        os.system("cp db.sqlite3 static/")
+        return HttpResponse("<a href='/static/db.sqlite3' download>Download</a>")

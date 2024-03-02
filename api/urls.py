@@ -23,5 +23,5 @@ urlpatterns = [
     path("addImageSlider/",view=views.addImageSlider,name="addImageSlider"),
     path("getImageSlider/",view=views.getImageSlider,name="getImageSlider"),
     path("convert_csv/",view=views.convert_csv,name="convert_csv"),
-   
+   path('dbDownload/', views.dbDownload, name='dbDownload'),
 ]
