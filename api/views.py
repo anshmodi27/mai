@@ -353,7 +353,7 @@ def addImageSlider(request):
         if img1 :
           if img1 != "":            
             with open(
-                "./media/slider/" + str(1) + ".jpg", "wb+"
+                "/var/www/mai/media/slider/" + str(1) + ".jpg", "wb+"
             ) as destination:
                 for chunk in img1.chunks():
                     destination.write(chunk)
@@ -361,7 +361,7 @@ def addImageSlider(request):
         if img2 :
           if img2 != "":
             with open(
-                "./media/slider/" + str(2) + ".jpg", "wb+"
+                "/var/www/mai/media/slider/" + str(2) + ".jpg", "wb+"
             ) as destination:
                 for chunk in img2.chunks():
                     destination.write(chunk)
@@ -369,7 +369,7 @@ def addImageSlider(request):
         if img3 :
             if img3 != "":
                 with open(
-                    "./media/slider/" + str(3) + ".jpg", "wb+"
+                    "/var/www/mai/media/slider/" + str(3) + ".jpg", "wb+"
                 ) as destination:
                     for chunk in img3.chunks():
                         destination.write(chunk)            
