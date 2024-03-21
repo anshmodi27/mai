@@ -446,5 +446,5 @@ def convert_csv(request):
 def dbDownload(request):
     if request.user.is_superuser:
         # copy the database file to the static folder
-        os.system("cp db.sqlite3 static/")
-        return HttpResponse("<a href='/static/db.sqlite3' download>Download</a>")
+        os.system("cp db.sqlite3 assets/")
+        return HttpResponse("<a href='/assets/db.sqlite3' download>Download</a>")
