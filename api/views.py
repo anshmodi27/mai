@@ -46,6 +46,7 @@ def addProduct(request):
             content_type="application/json",
             )   
         else:
+            path=request.POST.get("path")
             newproduct = Product()
             newproduct.productName = productName
             newproduct.productLink= (
@@ -55,7 +56,10 @@ def addProduct(request):
             newproduct.packing = packaging
             newproduct.description = description
             newproduct.listdes = json.loads(description)
-            newproduct.images = image
+            if path:
+                newproduct.images = path
+            else:    
+                newproduct.images = image
             newproduct.category = Category.objects.get(categoryName=category)
             newproduct.isLive = True
             newproduct.save()
