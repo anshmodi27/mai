@@ -76,8 +76,17 @@ def addDraft(request):
         packaging = request.POST.get("packaging")
         description= request.POST.get("description")
         image= request.FILES.get("image")
+
+        if productName=="" or productName==None or productName==" ":
+            return HttpResponse(
+            json.dumps({"msg": "Plese enter product name To Save Draft."}),
+            content_type="application/json",
+            )
+
+
+        isexist= Product.objects.filter(productName=productName).exists()
         
-        if productName:
+        if isexist is not True:
         
             newproduct = Product()
             newproduct.productName = productName
@@ -95,11 +104,13 @@ def addDraft(request):
             json.dumps({"msg": "Your details drafted successfully."}),
             content_type="application/json",
             )
-        return HttpResponse(
-            json.dumps({"msg": "Plese enter product name To Save Draft."}),
+        else:
+            return HttpResponse(
+            json.dumps({"msg": "Product alerady exist in our database."}),
             content_type="application/json",
             )
-                
+
+        
 
        
 @csrf_exempt
